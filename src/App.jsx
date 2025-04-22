@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import Base from "./components/Base";
 
 function App() {
- 
   return (
     <>
-       <h1 className='bg-amber-200'>welcome</h1>
+      <Base />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
