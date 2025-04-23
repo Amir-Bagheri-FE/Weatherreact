@@ -2,9 +2,9 @@ function WeatherMain() {
   return (
     <div
       id="main"
-      className="flex flex-col justify-between p-1.5 w-[70%] h-full bg-blue-200 bg-opacity-30 rounded-2xl backdrop-blur-md border border-blue-900"
+      className="flex flex-col justify-between p-1.5 w-[70%] h-full bg-[rgba(49,114,255,0.46)] bg-opacity-30 rounded-2xl backdrop-blur-md border border-blue-900"
     >
-      <div className="flex flex-col justify-center items-center w-full h-auto py-4">
+      <div className="flex flex-col justify-center items-center w-full h-auto mt-6 py-4">
         <h2 className="text-gray-700 font-semibold">Please search for a city</h2>
         <img
           src="http://openweathermap.org/img/wn/01d@2x.png"
