@@ -1,9 +1,11 @@
+import Details from "./Details";
 import WeatherMain from "./WeatherMain";
 
 function Base() {
   return (
-    <div className="h-[100vh] bg-amber-500 w-full bg-cover bg-center bg-no-repeat">
+    <div className="flex h-[100vh]  w-full bg-cover bg-center bg-no-repeat">
      <WeatherMain />
+     <Details />
     </div>
   );
 }
