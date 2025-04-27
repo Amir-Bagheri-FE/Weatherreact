@@ -8,9 +8,9 @@ function Base() {
   async function APIcall(city) {
     try {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
       );
-      const data = await res.json();
+      const data = await res.json();    
     } catch (error) {
       console.error(error, "error occurred");
     }
@@ -18,7 +18,7 @@ function Base() {
   return (
     <div className="flex h-[100vh]  w-full bg-cover bg-center bg-no-repeat">
      <WeatherMain />
-     <Details callAPI={APIcall}/>
+     <Details  APIcall={APIcall}/>
     </div>
   );
 }
