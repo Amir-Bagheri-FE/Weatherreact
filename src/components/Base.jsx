@@ -21,7 +21,7 @@ function Base() {
   return (
     <div className="flex h-[100vh]  w-full bg-cover bg-center bg-no-repeat">
       <WeatherMain data={weatherData} />
-      <Details APIcall={APIcall} />
+      <Details APIcall={APIcall} Data={weatherData}/>
     </div>
   );
 }

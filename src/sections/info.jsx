@@ -1,4 +1,4 @@
-const Info = () => {
+const Info = ({ data }) => {
   return (
     <div className="h-[30%] mt-5 flex flex-col">
       <h2 className="font-black text-center">Weather Information</h2>
