@@ -1,4 +1,5 @@
 function WeatherMain({ data }) {
+ 
   return (
     <div id="main" className="flex flex-col justify-between p-1.5 w-[70%] h-full bg-gradient-to-bl from-blue-700 via-blue-900 to-blue-600 bg-opacity-30 rounded-2xl backdrop-blur-md border border-blue-900">
 
@@ -13,16 +14,17 @@ function WeatherMain({ data }) {
 
       <div className="w-full h-48 bg-blue-200 bg-opacity-30 backdrop-blur-md mt-4 rounded-lg flex justify-around items-center">
 
-        <div className="w-[25%] h-[70%] m-0.5   bg-white rounded-xl shadow-md"></div>
+        <div className="w-[25%] h-[70%] m-0.5 flex justify-center bg-white rounded-xl shadow-md"></div>
 
-        <div className="w-[50%] h-[70%] m-0.5 bg-white rounded-xl shadow-md">
-          <h2>weather type: {data?.weather?.[0]?.description || "N/A"}</h2>
+        <div className="w-[50%] h-[70%] p-5 m-0.5 flex justify-center bg-white rounded-xl shadow-md">
+          <h2 className="font-black">weather type: {data?.weather?.[0]?.description || "N/A"}</h2>
           <br />
-          <h2>temperature: {data?.main?.temp || "N/A"}°C</h2>
           <br />
         </div>
         
-        <div className="w-[25%] h-[70%] m-0.5 bg-white rounded-xl shadow-md"></div>
+        <div className="w-[25%] h-[70%] p-5 m-0.5 flex justify-center bg-white rounded-xl shadow-md">
+        <h2 className="font-black">temperature: {data?.main?.temp || "N/A"}°C</h2>
+        </div>
       </div>
     </div>
   );

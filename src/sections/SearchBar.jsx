@@ -1,6 +1,6 @@
 const SearchBar = ({ APIcall }) => {
   return (
-    <div className="h-[10%] flex justify-between">
+    <div className="h-[10%]   flex  justify-between">
       <input
         type="text"
         placeholder="search for a city"
