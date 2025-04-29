@@ -1,12 +1,22 @@
 const Info = ({ data }) => {
+  const convertTimezone = (timezone) => {
+    if (!timezone && timezone !== 0) return "";
+    const date = new Date();
+    const utcOffset = date.getTimezoneOffset() * 60; // Convert minutes to seconds
+    const localTime = new Date(
+      (date.getTime() / 1000 + timezone + utcOffset) * 1000
+    );
+    return localTime.toLocaleTimeString();
+  };
+
   return (
     <div className="h-[30%] mt-5 flex flex-col">
       <h2 className="font-black text-center">Weather Information</h2>
-      <ul>
-        <li className="my-3">Current Temperature: 25°C</li>
-        <li className="my-3">Humidity: 60%</li>
-        <li className="my-3">Wind Speed: 15 km/h</li>
-        <li className="my-3">Forecast: Sunny</li>
+      <ul className="font-black text-[rgb(94,255,228)]">
+        <li className="my-3">feels like: {data?.main?.feelslike || ""}</li>
+        <li className="my-3">wind speed : {data?.wind?.speed || ""}</li>
+        <li className="my-3">Humidity: {data?.main?.humidity || ""}</li>
+        <li className="my-3">timeZone: {convertTimezone(data?.timezone)}</li>
       </ul>
     </div>
   );
