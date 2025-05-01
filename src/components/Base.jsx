@@ -7,21 +7,30 @@ const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 function Base() {
   const [weatherData, setWeatherData] = useState({});
+  const [loading, setLoading] = useState(false);
   async function APIcall(city) {
+    setLoading(true);
     try {
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-      );
+      )
       const data = await res.json();
       setWeatherData(data);
+      setLoading(false);
     } catch (error) {
       console.error(error, "error occurred");
+      setLoading(false);
     }
   }
   return (
-    <div className="flex h-[100vh]  w-full bg-cover bg-center bg-no-repeat">
+    <div className="flex h-[100vh] w-full bg-cover bg-center bg-no-repeat relative">
+      {loading ? (
+        <div className="h-full w-full bg-[rgba(255,255,255,0.40)] flex justify-center items-center z-20 absolute inset-0">
+          <p className="font-bold text-5xl animate-ping">Loading...☁️</p>
+        </div>
+      ) : null}
       <WeatherMain data={weatherData} />
-      <Details APIcall={APIcall} Data={weatherData}/>
+      <Details APIcall={APIcall} Data={weatherData} />
     </div>
   );
 }

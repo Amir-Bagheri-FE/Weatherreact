@@ -1,4 +1,6 @@
 const Info = ({ data }) => {
+  console.log(data);
+  
   const convertTimezone = (timezone) => {
     if (!timezone && timezone !== 0) return "";
     const date = new Date();
@@ -13,7 +15,7 @@ const Info = ({ data }) => {
     <div className="h-[30%] mt-5 flex flex-col">
       <h2 className="font-black text-center">Weather Information</h2>
       <ul className="font-black text-[rgb(94,255,228)]">
-        <li className="my-3">feels like: {data?.main?.feelslike || ""}</li>
+        <li className="my-3">feels like: {data?.main.feels_like || ""}</li>
         <li className="my-3">wind speed : {data?.wind?.speed || ""}</li>
         <li className="my-3">Humidity: {data?.main?.humidity || ""}</li>
         <li className="my-3">timeZone: {convertTimezone(data?.timezone)}</li>
