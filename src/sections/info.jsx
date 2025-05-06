@@ -1,6 +1,4 @@
 const Info = ({ data }) => {
-  console.log(data);
-  
   const convertTimezone = (timezone) => {
     if (!timezone && timezone !== 0) return "";
     const date = new Date();

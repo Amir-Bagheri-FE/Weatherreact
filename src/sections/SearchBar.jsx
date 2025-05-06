@@ -3,11 +3,11 @@ import { useRef } from "react";
 const SearchBar = ({ APIcall }) => {
   const refTry=useRef(null)
   return (
-    <div className="h-[10%]   flex  justify-between">
+    <div className="p-3 flex   flex-wrap gap-2">
       <input
         type="text"
         placeholder="search for a city"
-        className="py-0 px-[90px] focus:border-t-0 focus:border-l-0 focus:border-r-0 focus:border-b-4 border-2 border-green-500 rounded-xl focus:border-green-500 focus:rounded-[8px] focus:outline-none focus:animate-pulse"
+        className="pl-4 w-full md:w-auto focus:border-t-0 focus:border-l-0 focus:border-r-0 focus:border-b-4 border-2 border-green-500 rounded-xl focus:border-green-500 focus:rounded-[8px] focus:outline-none focus:animate-pulse"
         id="CityName"
         ref={refTry}
       />
