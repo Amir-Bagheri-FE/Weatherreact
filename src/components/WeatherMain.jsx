@@ -30,9 +30,9 @@ function WeatherMain({ data }) {
         <i className={`wi ${weathericon || 'wi-day-sunny'} mt-2 text-3xl text-amber-400 animate-pulse`}></i>
       </div>
 
-      <div className="w-full min-h-48 p-2 bg-blue-200 bg-opacity-30 backdrop-blur-md mt-4 rounded-lg flex justify-around items-center">
+      <div className="w-full min-h-48 p-0.5 bg-blue-200 bg-opacity-30 backdrop-blur-md mt-4 rounded-lg flex justify-around items-center">
 
-        <div className="w-[25%] h-[70%] m-0.5 flex justify-center items-center bg-white rounded-xl shadow-md">
+        <div className="w-[30%] h-[70%] m-0.5 flex justify-center items-center bg-white rounded-xl shadow-md">
           <h2 className="font-black text-[12px] max-md:text-[10px]">
             ⬆️max temperature : <br/>
             {data?.main?.temp_max || ''}
@@ -42,14 +42,14 @@ function WeatherMain({ data }) {
           </h2>
         </div>
 
-        <div className="w-[50%] h-[70%] p-5 m-0.5 items-center flex justify-center bg-white rounded-xl shadow-md">
+        <div className="w-[40%] h-[70%] p-5 m-0.5 items-center flex justify-center bg-white rounded-xl shadow-md">
           <h2 className="font-black text-[17px] max-md:text-[12px]">weather type: {data?.weather?.[0]?.description || "N/A"}</h2>
           <br />
           <br />
         </div>
         
-        <div className="w-[25%] h-[70%] p-5 m-0.5 items-center flex justify-center bg-white rounded-xl shadow-md">
-        <h2 className="font-black text-[17px] max-md:text-[12px]">temperature: {data?.main?.temp || "N/A"}°C</h2>
+        <div className="w-[30%] h-[70%] p-5 m-0.5 items-center flex justify-center bg-white rounded-xl shadow-md">
+        <h2 className="font-black text-[17px] max-md:text-[8px]">temperature: {data?.main?.temp || "N/A"}°C</h2>
         </div>
       </div>
     </div>
