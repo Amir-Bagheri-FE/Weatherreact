@@ -8,6 +8,7 @@ const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 function Base() {
   const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(false);
+  let [predict,SetPredict]=useState({})
   async function APIcall(city) {
     setLoading(true);
     try {
@@ -22,6 +23,20 @@ function Base() {
       setLoading(false);
     }
   }
+  async function FiveDayCall(){
+    let City_Name=weatherData.name ? weatherData.name :null
+try {
+  setLoading(true)
+  let response =await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${City_Name}&appid=${API_KEY}&units=metric`)
+  const Data5=await response.json()
+  SetPredict(Data5);
+  setLoading(false)
+} catch (error) {
+  console.error(error , 'error fetching Data')
+  setLoading(false)
+}
+  }
+ 
   return (
     <div className="flex h-[100vh] w-full bg-cover bg-center bg-no-repeat relative">
       {loading ? (
@@ -30,7 +45,7 @@ function Base() {
         </div>
       ) : null}
       <WeatherMain data={weatherData} />
-      <Details APIcall={APIcall} Data={weatherData} />
+      <Details APIcall={APIcall} Data={weatherData} Predict={FiveDayCall}/>
     </div>
   );
 }
