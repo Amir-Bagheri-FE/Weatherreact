@@ -1,4 +1,4 @@
-const Info = ({ data }) => {
+const Info = ({ data , predictData }) => {
   const convertTimezone = (timezone) => {
     if (!timezone && timezone !== 0) return "";
     const date = new Date();
@@ -17,6 +17,9 @@ const Info = ({ data }) => {
         <li className="my-3 max-md:text-[10px]">wind speed : {data?.wind?.speed || ""}</li>
         <li className="my-3 max-md:text-[10px]">Humidity: {data?.main?.humidity || ""}</li>
         <li className="my-3 max-md:text-[10px]">timeZone: {convertTimezone(data?.timezone)}</li>
+        {predictData?.city?.population && (
+          <li>Population: {predictData.city.population}</li>
+        )}
       </ul>
     </div>
   );
