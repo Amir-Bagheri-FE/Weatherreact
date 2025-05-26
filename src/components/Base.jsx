@@ -10,6 +10,7 @@ function Base() {
   const [loading, setLoading] = useState(false);
   let [predict, SetPredict] = useState({});
   async function APIcall(city) {
+    SetPredict({});
     setLoading(true);
     try {
       const res = await fetch(
@@ -49,7 +50,7 @@ function Base() {
           <p className="font-bold text-5xl animate-ping">Loading...☁️</p>
         </div>
       ) : null}
-      <WeatherMain data={weatherData} />
+      <WeatherMain data={weatherData} predictdata={predict}/>
       <Details APIcall={APIcall} Data={weatherData} PredictFunction={FiveDayCall} PredictData={predict}/>
     </div>
   );
