@@ -34,6 +34,8 @@ function Base() {
       );
       const Data5 = await response.json();
       SetPredict(Data5);
+      console.log(predict);
+      
       setLoading(false);
       console.log(predict, "five day data");
       
