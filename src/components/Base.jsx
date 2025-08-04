@@ -34,10 +34,9 @@ function Base() {
       );
       const Data5 = await response.json();
       SetPredict(Data5);
-      console.log(predict);
+    
       
       setLoading(false);
-      console.log(predict, "five day data");
       
     } catch (error) {
       console.error(error, "error fetching Data");
@@ -52,8 +51,13 @@ function Base() {
           <p className="font-bold text-5xl animate-ping">Loading...☁️</p>
         </div>
       ) : null}
-      <WeatherMain data={weatherData} predictdata={predict}/>
-      <Details APIcall={APIcall} Data={weatherData} PredictFunction={FiveDayCall} PredictData={predict}/>
+      <WeatherMain data={weatherData} predictdata={predict} />
+      <Details
+        APIcall={APIcall}
+        Data={weatherData}
+        PredictFunction={FiveDayCall}
+        PredictData={predict}
+      />
     </div>
   );
 }
